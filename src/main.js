@@ -1,9 +1,12 @@
 import Vue from "vue";
+import BootstrapVue from "bootstrap-vue";
 import App from "./App.vue";
 import router from "./router";
-import { Layout } from "./bootstrap-vue/es/components";
+//import { Layout } from "./bootstrap-vue/es/components";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
-Vue.use(Layout);
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 

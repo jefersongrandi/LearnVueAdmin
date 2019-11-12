@@ -1,23 +1,36 @@
 <template>
-  <div class="login">
-    <b-alert v-model="erro" variant="danger" dismissible>
-      Dismissible Alert!
-    </b-alert>
-    <h1>Login</h1>
-    <input type="text" placeholder="Email" v-model="email">
-    <br>
-    <input type="password" placeholder="Senha" v-model="senha">
-    <br>
-    <div class="btn-login">
-      <button @click="login">Login</button>
+  <b-container fluid>
+    <div class="row justify-content-md-center">
+      <div class="col-lg-4">
+        <b-alert v-model="existeerro" variant="danger" dismissible>{{erro}}</b-alert>
+        <b-card class="card" bg-variant="secondary" text-variant="white" title="Login">
+          <b-card-text>
+            <b-form>
+              <b-form-group id="loginemail" label="Email" label-for="Email">
+                <b-form-input
+                  id="loginemail"
+                  v-model="email"
+                  type="email"
+                  placeholder="Digite seu email"
+                ></b-form-input>
+              </b-form-group>
+              <br>
+              <b-form-group id="loginsenha" label="Senha" label-for="Senha">
+                <b-form-input
+                  id="loginsenha"
+                  v-model="senha"
+                  type="password"
+                  placeholder="Digite sua senha"
+                ></b-form-input>
+              </b-form-group>
+              <b-button type="button" @click="login" variant="primary">Login</b-button>&nbsp&nbsp
+              <b-button type="reset" variant="danger" @click="existeerro=false">Reset</b-button>
+            </b-form>
+          </b-card-text>
+        </b-card>
+      </div>
     </div>
-    <p>
-      Você não tem conta?
-      <span>
-        <router-link to="/registrar">crie uma conta</router-link>
-      </span>
-    </p>
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -29,19 +42,23 @@ export default {
     return {
       email: "",
       senha: "",
-      erro: ""
+      erro: "",
+      existeerro: false
     };
   },
   created: function() {
+    this.existeerro = false;
     this.erro = "";
   },
   methods: {
     login: function() {
       this.erro = "";
+      this.existeerro = false;
       if (this.email !== "" && this.senha !== "") {
         this.$router.replace("home");
       } else {
-        this.erro = "Não foi possível realizar o login";
+        this.erro = "Preencha todos os campos para efetuar login";
+        this.existeerro = true;
       }
       /*firebase.auth().signInWithEmailAndPassword(this.email, this.senha).then(
           (user) => {
@@ -58,28 +75,6 @@ export default {
 </script>
 
 <style scoped>
-.login {
-  margin-top: 40px;
-}
-input {
-  margin: 10px 0;
-  width: 20%;
-  padding: 15px;
-}
-
-button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4caf50;
-  border: 0;
-  padding: 15px;
-  color: #ffffff;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
 p {
   margin-top: 40px;
   font-size: 13px;
