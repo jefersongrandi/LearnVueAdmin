@@ -1,2 +1,0 @@
-# LearnVueAdmin
-Created with CodeSandbox
