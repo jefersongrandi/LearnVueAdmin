@@ -10,7 +10,11 @@
           <h3 class="text-light">
             <a>Maria Bailarina</a>
           </h3>
-          <b-button type="submit" @click="modalCad = !modalCad" variant="primary">Matricule sua pequena</b-button>
+          <b-button
+            type="submit"
+            @click="modalCad = !modalCad"
+            variant="primary"
+          >Matricule sua pequena</b-button>
           <b-navbar-toggle target="nav-collapse" style="border: solid 1px black"></b-navbar-toggle>
 
           <b-collapse id="nav-collapse" is-nav class="navitems">
@@ -60,7 +64,15 @@
         </section>
       </footer>
 
-      <b-modal size="lg" scrollable centered hide-footer v-model="modalCad" id="modal-1" title="Cadastro de Aluno">
+      <b-modal
+        size="lg"
+        scrollable
+        centered
+        hide-footer
+        v-model="modalCad"
+        id="modal-1"
+        title="Cadastro de Bailarina(o)"
+      >
         <!--<p class="my-4">Hello from modal!</p>-->
         <cadastro></cadastro>
       </b-modal>
