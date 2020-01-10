@@ -10,18 +10,21 @@
       <b-col col lg="5" md="5" cols="10">
         <div class="about-content">
           <h2>Sobre nós</h2>
-          <h3>Odio sed id eos et laboriosam consequatur eos earum soluta.</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Aut dolor id. Sint aliquam consequatur ex ex labore. Et quis qui dolor nulla dolores neque. Aspernatur consectetur omnis numquam quaerat. Sed fugiat nisi. Officiis veniam molestiae. Et vel ut quidem alias veritatis repudiandae ut fugit. Est ut eligendi aspernatur nulla voluptates veniam iusto vel quisquam. Fugit ut maxime incidunt accusantium totam repellendus eum error. Et repudiandae eum iste qui et ut ab alias.</p>
+          <h3>Maria Bailarina é arte e desenvolvimento</h3>
+          <p>O Maria Bailarina existe desde 2013 ofertando aulas de balé em parceria com algumas escolas da cidade, com o intuito de que esta arte seja cada vez mais disseminada e que a partir dela, a criança possa se desenvolver e aprender novas formas de existir e perceber o mundo.</p>
+          <p>Prezando sempre pela aprendizagem prazerosa e divertida desta dança.</p>
           <ul>
             <li>
-              <i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              <i class="ion-android-checkmark-circle"></i> 
+              Nós acreditamos que a dança possui milhares de objetivos e importância, principalmente para o desenvolvimento infantil, tanto na cognição e psicomotricidade, quanto na área psicossocial e psicológica.
             </li>
             <li>
-              <i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.
+              <i class="ion-android-checkmark-circle"></i> 
+              Por isso, ao ser uma Mariazinha a criança a criança está inserida em um meio que amplia os seus olhares para a dança, e ela se torna mediadora de muitos processos, possibilitando à bailarina/bailarino um maior conhecimento de seu corpo, do espaço que habita, superando as suas limitações e reconhecendo suas habilidades e potencialidades.
             </li>
             <li>
-              <i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.
+              <i class="ion-android-checkmark-circle"></i> 
+              Nosso objetivo também é, através da dança, permitir uma maior estruturação emocional e que a criança tenha uma experiência dançante leve, respeitada e feliz.
             </li>
           </ul>
         </div>
