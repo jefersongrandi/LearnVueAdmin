@@ -4,9 +4,11 @@ import lang from "element-ui/lib/locale/lang/pt-br";
 import locale from "element-ui/lib/locale";
 import BootstrapVue from "bootstrap-vue";
 
-//import "element-ui/lib/theme-chalk/index.css";
-import "./css/element-variables.scss";
-import "./css/style.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+import "element-ui/lib/theme-chalk/index.css";
+//import "./css/element-variables.scss";
+//import "./css/style.scss";
 
 import App from "./App.vue";
 import router from "./router";

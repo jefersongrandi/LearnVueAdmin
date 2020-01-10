@@ -7,7 +7,7 @@
       shape="circle"
       color="#e67e22"
       error-color="#ff4949"
-      :start-index="1"
+      :start-index="0"
     >
       <!--color="#20a0ff"-->
       <tab-content title="Responsável" icon="icon ion-md-contact" :before-change="validaResp">
