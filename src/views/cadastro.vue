@@ -7,7 +7,7 @@
       shape="circle"
       color="#e67e22"
       error-color="#ff4949"
-      :start-index="0"
+      :start-index="1"
     >
       <!--color="#20a0ff"-->
       <tab-content title="Responsável" icon="icon ion-md-contact" :before-change="validaResp">
@@ -47,35 +47,39 @@
           <el-form-item label="Nome" prop="nome" required>
             <el-input v-model="formAluno.nome" placeholder="Nome Completo"></el-input>
           </el-form-item>
-          <el-form-item label="Data de Nascimento" required>
-            <el-form-item prop="datanascto">
-              <el-date-picker
-                type="date"
-                placeholder="Data de Nascimento"
-                v-model="formAluno.datanascto"
-                format="dd/MM/yyyy"
-                style="width: 100%;"
-                :prefix-icon="'icon ion-ios-analytics'"
-              ></el-date-picker>
-            </el-form-item>
+          <el-form-item label="Data de Nascimento" class="col-lg-6 px-0" required>
+            <el-col :span="12">
+              <el-form-item prop="datanascto">
+                <el-date-picker
+                  type="date"
+                  placeholder="Data de Nascimento"
+                  v-model="formAluno.datanascto"
+                  format="dd/MM/yyyy"
+                  style="width: 100%;"
+                  :prefix-icon="'icon ion-ios-analytics'"
+                ></el-date-picker>
+              </el-form-item>
+            </el-col>
           </el-form-item>
-          <el-form-item label="Sexo" prop="sexo" required>
-            <el-col :span="24">
+          <el-form-item label="Sexo" prop="sexo" class="col-lg-6 px-0" required>
+            <el-col :span="12">
               <el-radio-group v-model="formAluno.sexo">
                 <el-radio :label="'M'">Masculino</el-radio>
                 <el-radio :label="'F'">Feminino</el-radio>
               </el-radio-group>
             </el-col>
           </el-form-item>
-          <el-form-item>
-            <el-select v-model="value" filterable placeholder="Select">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
+          <el-form-item label="escola" prop="escola" required>
+            <el-col :span="24">
+              <el-select v-model="escola" filterable placeholder="Select" class="col-lg-12 px-0">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                ></el-option>
+              </el-select>
+            </el-col>
           </el-form-item>
         </el-form>
       </tab-content>
@@ -151,23 +155,29 @@ export default {
   },
   data() {
     return {
-      options: [{
-          value: '1',
-          label: 'Colégio Santa Cruz'
-        }, {
-          value: '2',
-          label: 'Colégio Integrado'
-        }, {
-          value: '3',
-          label: 'Colégio Alfa'
-        }, {
-          value: '4',
-          label: 'Colégio Conexão'
-        }, {
-          value: '5',
-          label: 'Colégio Caic'
-        }],
-        value: '',
+      options: [
+        {
+          value: "1",
+          label: "Colégio Santa Cruz"
+        },
+        {
+          value: "2",
+          label: "Colégio Integrado"
+        },
+        {
+          value: "3",
+          label: "Colégio Alfa"
+        },
+        {
+          value: "4",
+          label: "Colégio Conexão"
+        },
+        {
+          value: "5",
+          label: "Colégio Caic"
+        }
+      ],
+      value: "",
       formResp: {
         nome: "",
         datanascto: "",
@@ -380,7 +390,38 @@ export default {
   max-width: 120px !important;
 }
 
+.vue-form-wizard .wizard-tab-content {
+  min-height: 20px;
+  padding: 20px 20px 10px;
+}
+
+.vue-form-wizard.md .wizard-navigation .wizard-progress-with-circle {
+  position: relative;
+  top: 36px;
+  height: 4px;
+}
+
+.vue-form-wizard.md .wizard-icon-circle {
+  max-width: 60px;
+  max-height: 60px;
+  font-size: 30px;
+}
+
+.vue-form-wizard .el-form-item__label {
+  padding: 0;
+  margin: 0;
+}
+
+.vue-form-wizard .stepTitle {
+  font-size: 14px;
+}
+
 @media (max-width: 520px) {
+  .vue-form-wizard .wizard-tab-content {
+    min-height: 20px;
+    padding: 20px 20px 10px;
+  }
+
   .vue-form-wizard.md .wizard-navigation .wizard-progress-with-circle {
     position: relative;
     top: 26px;
@@ -399,7 +440,7 @@ export default {
   }
 
   .vue-form-wizard .stepTitle {
-    font-size: 14px;
+    font-size: 10px;
   }
 }
 </style>

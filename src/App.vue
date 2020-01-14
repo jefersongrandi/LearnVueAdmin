@@ -6,30 +6,30 @@
       </p>-->
       <header id="header">
         <b-navbar toggleable="sm" type="dark" variant="light" fixed="top" :class="'main-nav'">
-          <b-navbar-brand></b-navbar-brand>
-          <h3 class="text-light">
-            <a>Maria Bailarina</a>
-          </h3>
-          <b-button
-            type="submit"
-            @click="modalCad = !modalCad"
-            variant="primary"
-          >Matricule sua pequena</b-button>
-          <b-navbar-toggle target="nav-collapse" style="border: solid 1px black"></b-navbar-toggle>
+              <b-navbar-brand></b-navbar-brand>
+              <h3 class="text-light">
+                <a>Maria Bailarina</a>
+              </h3>
+              <b-button
+                type="submit"
+                @click="modalCad = !modalCad"
+                variant="primary"
+              >Matricula Online</b-button>
+              <b-navbar-toggle target="nav-collapse" style="border: solid 1px black"></b-navbar-toggle>
 
-          <b-collapse id="nav-collapse" is-nav class="navitems">
-            <!--<b-navbar-nav>
-              <b-nav-item class="ativado">MARIA BAILARINA</b-nav-item>
-            </b-navbar-nav>-->
-            <!-- Right aligned nav items -->
-            <b-navbar-nav class="ml-auto">
-              <b-nav-item id="lkhome" :class="'active'" @click="moverScroll">Home</b-nav-item>
-              <b-nav-item id="lksobre" @click="moverScroll">Sobre</b-nav-item>
-              <b-nav-item id="lkservicos" @click="moverScroll">Serviços</b-nav-item>
-              <b-nav-item id="lkequipe" @click="moverScroll">Equipe</b-nav-item>
-              <b-nav-item id="lkcontato" @click="moverScroll">Contato</b-nav-item>
-            </b-navbar-nav>
-          </b-collapse>
+              <b-collapse id="nav-collapse" is-nav class="navitems">
+                <!--<b-navbar-nav>
+                  <b-nav-item class="ativado">MARIA BAILARINA</b-nav-item>
+                </b-navbar-nav>-->
+                <!-- Right aligned nav items -->
+                <b-navbar-nav class="ml-auto">
+                  <b-nav-item id="lkhome" :class="'active'" @click="moverScroll">Home</b-nav-item>
+                  <b-nav-item id="lksobre" @click="moverScroll">Sobre</b-nav-item>
+                  <b-nav-item id="lkservicos" @click="moverScroll">Serviços</b-nav-item>
+                  <b-nav-item id="lkequipe" @click="moverScroll">Equipe</b-nav-item>
+                  <b-nav-item id="lkcontato" @click="moverScroll">Contato</b-nav-item>
+                </b-navbar-nav>
+              </b-collapse>
         </b-navbar>
       </header>
       <main class="principal">
@@ -171,7 +171,7 @@ export default {
       var main_nav_height = $("#header").outerHeight();
       var cur_pos = window.scrollY;
 
-      console.log("agora: " + cur_pos);
+      //console.log("agora: " + cur_pos);
       //console.log(main_nav);
       //return;
 
@@ -182,8 +182,8 @@ export default {
         var top = $(this).offset().top - (main_nav_height + 180);
         var bottom = top + $(this).outerHeight() + 40;
 
-        console.log("Top: " + top);
-        console.log("Bottom: " + bottom);
+        //console.log("Top: " + top);
+        //console.log("Bottom: " + bottom);
 
         if (cur_pos >= top && cur_pos <= bottom) {
           //console.log(main_nav.find('a[id="lk' + $(this).attr("id") + ""))
