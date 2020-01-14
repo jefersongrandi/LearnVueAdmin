@@ -10,7 +10,7 @@
           <h3 class="text-light">
             <a>Maria Bailarina</a>
           </h3>
-          <b-button
+           <b-button
             type="submit"
             @click="modalCad = !modalCad"
             variant="primary"
