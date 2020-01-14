@@ -7,49 +7,70 @@
       shape="circle"
       color="#e67e22"
       error-color="#ff4949"
-      :start-index="1"
+      :start-index="3"
     >
       <!--color="#20a0ff"-->
       <tab-content title="Responsável" icon="icon ion-md-contact" :before-change="validaResp">
-        <el-form :model="formResp" class="demo-form-inline" :rules="regrasResp" ref="regraFormResp">
-          <el-form-item label="Nome" prop="nome">
-            <el-input v-model="formResp.nome" placeholder="Nome Completo"></el-input>
-          </el-form-item>
-          <el-form-item label="Data de Nascimento" required>
-            <el-form-item prop="datanascto">
-              <el-date-picker
-                type="date"
-                placeholder="Data de Nascimento"
-                v-model="formResp.datanascto"
-                format="dd/MM/yyyy"
-                style="width: 100%;"
-                :prefix-icon="'icon ion-md-calendar'"
-              ></el-date-picker>
-            </el-form-item>
-          </el-form-item>
-          <el-form-item label="Sexo" prop="sexo" required>
+        <el-form :model="formResp" class="demo-form-inline" :rules="regrasResp" ref="regraFormResp" label-position="top" >
+          <el-form-item>
+
             <el-col :span="24">
-              <el-radio-group v-model="formResp.sexo">
-                <el-radio :label="'M'">Masculino</el-radio>
-                <el-radio :label="'F'">Feminino</el-radio>
-              </el-radio-group>
+              <el-form-item label="Nome" prop="nome">
+                <el-input v-model="formResp.nome" placeholder="Nome Completo"></el-input>
+              </el-form-item>
+            </el-col>
+
+          </el-form-item>
+
+          <el-form-item>
+
+            <el-col :span="24">
+              <el-form-item prop="datanascto" label="Data de Nascimento" required>
+                <el-date-picker
+                  type="date"
+                  placeholder="Data de Nascimento"
+                  v-model="formResp.datanascto"
+                  format="dd/MM/yyyy"
+                  style="width: 100%;"
+                  :prefix-icon="'icon ion-md-calendar'"
+                ></el-date-picker>
+              </el-form-item>
             </el-col>
           </el-form-item>
+
+          <el-form-item>          
+            <el-col :span="24">
+              <el-form-item label="Sexo" prop="sexo" required>
+                <el-radio-group v-model="formResp.sexo">
+                  <el-radio :label="'M'">Masculino</el-radio>
+                  <el-radio :label="'F'">Feminino</el-radio>
+                </el-radio-group>
+              </el-form-item>
+            </el-col>
+          </el-form-item> 
         </el-form>
       </tab-content>
-      <tab-content title="Bailarina(o)" icon="icon ion-md-body" :before-change="validaAluno">
+      <tab-content title="Bailarina(o)" icon="icon ion-md-body" :before-change="validaAluno"> <!-- class="demo-form-inline" -->
         <el-form
           :model="formAluno"
-          class="demo-form-inline"
           :rules="regrasAluno"
           ref="formAlunoRule"
+          label-width="120px"
+          label-position="top" 
+          
         >
-          <el-form-item label="Nome" prop="nome" required>
-            <el-input v-model="formAluno.nome" placeholder="Nome Completo"></el-input>
+          
+          <el-form-item>
+            <el-col :xs="24">
+              <el-form-item label="Nome" prop="nome" required>
+                <el-input v-model="formAluno.nome" placeholder="Nome Completo"></el-input>
+              </el-form-item>
+            </el-col>
           </el-form-item>
-          <el-form-item label="Data de Nascimento" class="col-lg-6 px-0" required>
-            <el-col :span="12">
-              <el-form-item prop="datanascto">
+
+          <el-form-item>
+            <el-col :lg="{span: 11}" :sm="24">
+              <el-form-item prop="datanascto" label="Data de Nascimento" required>
                 <el-date-picker
                   type="date"
                   placeholder="Data de Nascimento"
@@ -60,26 +81,30 @@
                 ></el-date-picker>
               </el-form-item>
             </el-col>
-          </el-form-item>
-          <el-form-item label="Sexo" prop="sexo" class="col-lg-6 px-0" required>
-            <el-col :span="12">
-              <el-radio-group v-model="formAluno.sexo">
-                <el-radio :label="'M'">Masculino</el-radio>
-                <el-radio :label="'F'">Feminino</el-radio>
-              </el-radio-group>
+   
+            <el-col :lg="{span: 11, offset: 2}" :sm="{span: 24, offset: 0}">
+              <el-form-item prop="sexo" label="Sexo" required>
+                <el-radio-group v-model="formAluno.sexo">
+                  <el-radio :label="'M'">Masculino</el-radio>
+                  <el-radio :label="'F'">Feminino</el-radio>
+                </el-radio-group>
+              </el-form-item>
             </el-col>
           </el-form-item>
-          <el-form-item label="escola" prop="escola" required>
+
+          <el-form-item>          
             <el-col :span="24">
-              <el-select v-model="escola" filterable placeholder="Select" class="col-lg-12 px-0">
-                <el-option
-                  v-for="item in options"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value"
-                ></el-option>
-              </el-select>
-            </el-col>
+              <el-form-item label="Escola" prop="escola" required>
+                <el-select v-model="formAluno.escola" filterable placeholder="Select" class="col-lg-12 px-0">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                  ></el-option>
+                </el-select>
+              </el-form-item>
+            </el-col>          
           </el-form-item>
         </el-form>
       </tab-content>
@@ -87,25 +112,42 @@
       <tab-content title="Endereço" icon="icon ion-md-home" :before-change="validaEndereco">
         <el-form
           :model="formEndereco"
-          class="demo-form-inline"
           :rules="regrasEndereco"
           ref="formEnderecoRule"
+          label-width="120px"
+          label-position="top" 
         >
-          <el-form-item label="Cep" prop="cep" required>
-            <el-input v-model="formEndereco.cep" placeholder="Ex. 87306-319"></el-input>
+          <el-form-item>
+            <el-col :md="{span: 5}" :xs="{span: 24}">
+              <el-form-item label="Cep" prop="cep" required>
+                <el-input v-model="formEndereco.cep" placeholder="Ex. 87306-319"></el-input>
+              </el-form-item>
+            </el-col>
+
+            <el-col :md="{span: 17, offset: 2}" :sm="{span: 24, offset: 0}">
+              <el-form-item label="Bairro" prop="bairro">
+                <el-input v-model="formEndereco.bairro" placeholder="Jd. Isabel"></el-input>
+              </el-form-item>
+            </el-col>
           </el-form-item>
-          <el-form-item label="Logradouro" prop="logradouro" required>
-            <el-input
-              v-model="formEndereco.logradouro"
-              placeholder="Ex. Av. Manoel Mendes Camargo, 178"
-            ></el-input>
+
+          <el-form-item>
+            <el-col :xs="{span: 24, offset: 0}">
+              <el-form-item label="Logradouro" prop="logradouro" required>
+                <el-input
+                  v-model="formEndereco.logradouro"
+                  placeholder="Ex. Av. Manoel Mendes Camargo, 178"
+                ></el-input>
+              </el-form-item>              
+            </el-col>
           </el-form-item>
-          <el-form-item label="Complemento" prop="complemento">
-            <el-input v-model="formEndereco.complemento" placeholder="Ex. Apto 201"></el-input>
-          </el-form-item>
-          <el-form-item label="Bairro" prop="bairro">
-            <el-input v-model="formEndereco.bairro" placeholder="Jd. Isabel"></el-input>
-          </el-form-item>
+          <el-form-item>
+            <el-col :xs="{span: 24, offset: 0}">
+              <el-form-item label="Complemento" prop="complemento">
+                <el-input v-model="formEndereco.complemento" placeholder="Ex. Apto 201"></el-input>
+              </el-form-item>
+            </el-col>
+          </el-form-item>    
         </el-form>
       </tab-content>
 
@@ -115,22 +157,31 @@
           class="demo-form-inline"
           :rules="regrasContato"
           ref="formContatoRule"
+          label-position="top"
         >
-          <el-form-item label="Celular" prop="celular" required>
-            <!--<el-input v-model="formContato.celular" placeholder="Ex. (44)99876-6532"></el-input> -->
+          <el-form-item>
             <el-col :span="24">
-              <vue-tel-input v-model="formContato.celular" placeholder="Insira um telefone celular"></vue-tel-input>
+              <el-form-item label="Celular" prop="celular" required>
+                <!--<el-input v-model="formContato.celular" placeholder="Ex. (44)99876-6532"></el-input> -->
+                <vue-tel-input v-model="formContato.celular" placeholder="Insira um telefone celular"></vue-tel-input>
+              </el-form-item>
             </el-col>
           </el-form-item>
-          <el-form-item label="Fixo" prop="fixo">
-            <!--<el-input v-model="formContato.fixo" placeholder="Ex. (44)3523-3333"></el-input>-->
-            <!--<input type="text" v-model="formContato.fixo"/>-->
+          <el-form-item>
             <el-col :span="24">
-              <vue-tel-input v-model="formContato.fixo" placeholder="Insira um telefone fixo"></vue-tel-input>
+              <el-form-item label="Fixo" prop="fixo">
+                <!--<el-input v-model="formContato.fixo" placeholder="Ex. (44)3523-3333"></el-input>-->
+                <!--<input type="text" v-model="formContato.fixo"/>-->
+                  <vue-tel-input v-model="formContato.fixo" placeholder="Insira um telefone fixo"></vue-tel-input>
+              </el-form-item>
             </el-col>
           </el-form-item>
-          <el-form-item label="E-mail" prop="email">
-            <el-input v-model="formContato.email" placeholder="mariabailarina@gmail.com"></el-input>
+          <el-form-item>
+            <el-col :span="24">
+              <el-form-item label="E-mail" prop="email">
+                <el-input v-model="formContato.email" placeholder="mariabailarina@gmail.com"></el-input>
+              </el-form-item>
+            </el-col>
           </el-form-item>
         </el-form>
       </tab-content>
@@ -217,7 +268,8 @@ export default {
       formAluno: {
         nome: "",
         datanascto: "",
-        sexo: ""
+        sexo: "",
+        escola: ""
       },
       regrasAluno: {
         nome: [
@@ -246,6 +298,11 @@ export default {
             required: true,
             message: "Informe o sexo",
             trigger: "change"
+          }
+        ],
+        escola: [
+          {
+            required: true
           }
         ]
       },
@@ -406,6 +463,7 @@ export default {
   max-height: 60px;
   font-size: 30px;
 }
+
 
 .vue-form-wizard .el-form-item__label {
   padding: 0;
