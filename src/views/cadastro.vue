@@ -42,7 +42,7 @@
             <el-col :span="24">
               <el-form-item label="Sexo" prop="sexo" required>
                 <el-radio-group v-model="formResp.sexo">
-                  <el-radio :label="'M'">Masculinos</el-radio>
+                  <el-radio :label="'M'">Masculino</el-radio>
                   <el-radio :label="'F'">Feminino</el-radio>
                 </el-radio-group>
               </el-form-item>
