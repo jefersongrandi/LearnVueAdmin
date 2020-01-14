@@ -502,4 +502,3 @@ export default {
   }
 }
 </style>
-
