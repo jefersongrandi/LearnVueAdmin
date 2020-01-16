@@ -1,6 +1,6 @@
 <template>
   <b-row id="app" align-h="center">
-    <b-col col-sm="11" cols="12">
+    <b-col>
       <!--<p>
         <router-link to="/home">Go to Foo</router-link>
       </p>-->
@@ -249,7 +249,7 @@ export default {
   color: #444;
   margin-top: 60px;
   background-color: #ffffff !important;
-  /*max-width: 1280px !important;*/
+  max-width: 100vw !important;
 }
 
 a {
@@ -306,8 +306,14 @@ a:focus {
   background-color: #fff;
 } */
 main {
-  margin-top: 50px;
+  margin-top: 0px;
+  max-width: 100vw !important;
+  /*min-width: 100vw; */
+  min-height: 100vh;
+  margin: 0px;
 }
+
+
 
 .hero {
   min-height: 768px;
@@ -342,4 +348,15 @@ main {
   max-width: 100px;
   max-height: 50px;
 }*/
+
+@media screen and (max-width: 767px) {
+  main {
+    margin-top: 0px;
+    max-width: 100vw !important;
+    min-width: 100vw; 
+    min-height: 100vh;
+    margin: 0px;
+  }
+}
+
 </style>

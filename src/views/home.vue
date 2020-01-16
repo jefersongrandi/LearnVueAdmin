@@ -1,7 +1,7 @@
 <template>
   <b-row id="home">
 
-    <b-col lg="12">
+    <b-col class="alin">
 
       <b-carousel
         id="carousel-1"
@@ -17,43 +17,52 @@
         @sliding-end="onSlideEnd"
       >
         <!-- Text slides with image -->
-        <b-carousel-slide
-          caption="First slide"
-          text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-          img-src="https://picsum.photos/1024/480/?image=52"
-        ></b-carousel-slide>
-
-        <!-- Slides with custom text -->
-        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-          <h1>Hello world!</h1>
-        </b-carousel-slide>
-
-        <!-- Slides with image only -->
-        <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
-
-        <!-- Slides with img slot -->
-        <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
         <b-carousel-slide>
           <template v-slot:img>
             <img
-              class="d-block img-fluid w-100"
-              width="1024"
-              height="480"
-              src="https://picsum.photos/1024/480/?image=55"
+              class="d-block img-fluid w-100 desktop"
+              src="../img/slide1_w.jpg"
+              alt="image slot"
+            >
+            <img
+              class="d-block img-fluid w-100 mobile"
+              src="../img/slide1_h.jpg"
               alt="image slot"
             >
           </template>
         </b-carousel-slide>
 
-        <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-        <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-            a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
-          </p>
+        <!-- Slides with custom text -->
+        <b-carousel-slide>
+          <template v-slot:img>
+            <img
+              class="d-block img-fluid w-100 desktop"
+              src="../img/slide2_w.jpg"
+              alt="image slot"
+            >
+            <img
+              class="d-block img-fluid w-100 mobile"
+              src="../img/slide2_h.jpg"
+              alt="image slot"
+            >
+          </template>
+        </b-carousel-slide>
+
+        <b-carousel-slide>
+          <template v-slot:img>
+            <img
+              class="d-block img-fluid w-100 desktop"
+              src="../img/slide3_w.jpg"
+              alt="image slot"
+            >
+            <img
+              class="d-block img-fluid w-100 mobile"
+              src="../img/slide3_h.jpg"
+              alt="image slot"
+            >
+          </template>
         </b-carousel-slide>
       </b-carousel>
-    
     </b-col>
   </b-row>
 </template>
@@ -81,11 +90,58 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 
 #home {
-  padding: 5px 0 40px 0;
-  min-height: 768px;
+  padding: 0px 0 40px 0;
+  min-height: 100vh;
+}
+
+#home .alin {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+#home .container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#carousel-1 .carousel-item .img-fluid {
+  width: 100vw !important;
+  height:100%;
+  min-height: 92vh !important;
+  max-height: 92vh !important;
+}
+
+#carousel-1 .carousel-item .mobile {
+  display: none !important;
+}
+
+#carousel-1 .carousel-item .desktop {
+  display: block !important;
+}
+
+#carousel-1 .carousel-inner img {
+  margin: auto;
+}
+
+@media screen and (max-width: 767px) {
+  #carousel-1 .carousel-item .img-fluid {
+    width: 100% !important;
+    min-width: 100vw !important;
+    height: 92vh !important;
+    min-height: 92vh !important;
+    max-height: 90vh !important;
+  }
+      
+  #carousel-1 .carousel-item .mobile {
+    display: block !important;
+  }
+  
+  #carousel-1 .carousel-item .desktop {
+    display: none !important;
+  }
 }
 
 </style>
