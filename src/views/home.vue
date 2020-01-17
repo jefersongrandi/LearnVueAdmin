@@ -1,7 +1,5 @@
 <template>
-  <b-row id="home">
-
-    <b-col class="alin">
+  <div id="homein">
 
       <b-carousel
         id="carousel-1"
@@ -63,8 +61,7 @@
           </template>
         </b-carousel-slide>
       </b-carousel>
-    </b-col>
-  </b-row>
+  </div>
 </template>
 
 <script>
@@ -92,26 +89,16 @@ export default {
 
 <style>
 
-#home {
-  padding: 0px 0 40px 0;
-  min-height: 100vh;
-}
 
-#home .alin {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-}
-
-#home .container-fluid {
-  padding-left: 0px;
-  padding-right: 0px;
+.carousel-indicators {
+    padding-bottom: 50px;
 }
 
 #carousel-1 .carousel-item .img-fluid {
   width: 100vw !important;
   height:100%;
-  min-height: 92vh !important;
-  max-height: 92vh !important;
+  min-height: 100vh !important;
+  max-height: 100vh !important;
 }
 
 #carousel-1 .carousel-item .mobile {
@@ -130,9 +117,9 @@ export default {
   #carousel-1 .carousel-item .img-fluid {
     width: 100% !important;
     min-width: 100vw !important;
-    height: 92vh !important;
-    min-height: 92vh !important;
-    max-height: 90vh !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
   }
       
   #carousel-1 .carousel-item .mobile {

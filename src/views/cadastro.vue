@@ -7,7 +7,7 @@
       shape="circle"
       color="#e67e22"
       error-color="#ff4949"
-      :start-index="3"
+      :start-index="0"
     >
       <!--color="#20a0ff"-->
       <tab-content title="Responsável" icon="icon ion-md-contact" :before-change="validaResp">
@@ -26,14 +26,16 @@
 
             <el-col :span="24">
               <el-form-item prop="datanascto" label="Data de Nascimento" required>
-                <el-date-picker
+                <!--<el-date-picker
                   type="date"
                   placeholder="Data de Nascimento"
                   v-model="formResp.datanascto"
                   format="dd/MM/yyyy"
                   style="width: 100%;"
+                  picker-options="{onPick('10/01/2010', '01/01/2010')}"
                   :prefix-icon="'icon ion-md-calendar'"
-                ></el-date-picker>
+                ></el-date-picker> -->
+                <b-form-input type="date" id="datanascto" name="datanascto" v-on:blur="teste" v-model.lazy="formResp.datanascto"></b-form-input>
               </el-form-item>
             </el-col>
           </el-form-item>
@@ -206,6 +208,13 @@ export default {
   },
   data() {
     return {
+      datepickoptions: {
+        format: 'DD/MM/YYYY',
+        useCurrent: false,
+        locale: 'pt-br',
+        minDate: '2018-10-09', // min date value
+        maxDate: '2018-10-29'  // max date value
+      },
       options: [
         {
           value: "1",
@@ -394,11 +403,20 @@ export default {
     };
   },
   methods: {
+    teste(element) {
+      console.log(element.target)
+      //element.target.validity.valid = false
+    },
     onComplete: function() {
       alert("Feito!");
     },
     validaResp() {
+      //console.log(this.$refs.regraFormResp)
+      //this.$refs.regraFormResp.error = "bosta hein"
+      //return false
       return new Promise((resolve, reject) => {
+        //this.$refs.regraFormResp.error = "bosta hein"
+        //this.$refs.regraFormResp.validate(valid => { return true })
         this.$refs.regraFormResp.validate(valid => {
           resolve(valid);
         });

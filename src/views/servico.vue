@@ -6,29 +6,29 @@
     </header>
     <b-row>
       <b-col col lg="4" md="6" sm="12" cols="12">
-        <div class="box">
+        <div class="box" @click.prevent="mostrartexto(1)">
           <div class="icon" style="background: #fceef3;">
             <i class="icon ion-ios-analytics" style="color: #ff689b;"></i>
           </div>
           <h4 class="title">
-            <a href>Lorem Ipsum</a>
+            <a href="">“Aulas especiais”? Elas existem? </a>
           </h4>
           <p
-            class="description"
-          >Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            class="description">
+          </p>
         </div>
       </b-col>
       <b-col col lg="4" md="6" sm="12" cols="12">
-        <div class="box">
+        <div class="box" @click.prevent="mostrartexto(2)">
           <div class="icon" style="background: #fff0da;">
             <i class="icon ion-md-bookmarks" style="color: #e98e06;"></i>
           </div>
           <h4 class="title">
-            <a href>Dolor Sitema</a>
+            <a href>Como é nossa Rotina?</a>
           </h4>
           <p
             class="description"
-          >Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+          ></p>
         </div>
       </b-col>
       <b-col col lg="4" md="6" sm="12" cols="12">
@@ -37,54 +37,70 @@
             <i class="icon ion-ios-paper" style="color: #3fcdc7;"></i>
           </div>
           <h4 class="title">
-            <a href>Sed ut perspiciatis</a>
+            <a href>"Prof" posso assistir a aula?</a>
           </h4>
           <p
             class="description"
-          >Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+          ></p>
         </div>
       </b-col>
-      <b-col col lg="4" md="6" sm="12" cols="12">
-        <transition name="fade">
-          <div class="box">
-            <div class="icon" style="background: #eafde7;">
-              <i class="icon ion-ios-speedometer" style="color:#41cf2e;"></i>
-            </div>
-            <h4 class="title">
-              <a href>Magni Dolores</a>
-            </h4>
-            <p
-              class="description"
-            >Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          </div>
-        </transition>
-      </b-col>
-      <b-col col lg="4" md="6" sm="12" cols="12">
-        <div class="box">
-          <div class="icon" style="background: #e1eeff;">
-            <i class="icon ion-ios-globe" style="color: #2282ff;"></i>
-          </div>
-          <h4 class="title">
-            <a href>Nemo Enim</a>
-          </h4>
-          <p
-            class="description"
-          >At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+
+      <b-modal
+        size="lg"
+        scrollable
+        centered
+        hide-footer
+        v-model="modalCad"
+        id="modal-2"
+        title=""
+      >
+        <!--<p class="my-4">Hello from modal!</p>-->
+        <div v-if="inTexto1">
+
+          <mensagem>
+
+            <template v-slot:header>
+              <h3>“Aulas especiais”? Elas existem? </h3>
+            </template>
+
+            <p>
+              Todos os meses nós realizamos algumas aulas diferenciadas, cada uma com um objetivo específico:
+              </p>
+            <p>
+              Temos nossa aula de teoria, onde a relembramos conteúdos já apresentados às pequenas. Buscamos correlacionar o que vivenciamos na prática com ilustrações, desenhos que as vezes são elaborados pelas próprias bailarinas e atividades diversas que abarcam atividades de psicomotricidade fina.
+            </p>
+            <p>
+              As aulas de alongamento não podem faltar. É um momento em que passamos toda a aula com foco em explorar melhor os limites e possibilidades de cada corpo, e conhece-lo de forma mais específica.
+            </p>
+            <p>
+              E não podemos esquecer das aulas de recreação, que aparecem uma vez por mês, para alegria das nossas pequenas, que amam se divertir, ter um momento de descontração com as amigas, e aprender sempre algo novo.
+            </p>          
+
+          </mensagem>
         </div>
-      </b-col>
-      <b-col col lg="4" md="6" sm="12" cols="12">
-        <div class="box">
-          <div class="icon" style="background: #ecebff;">
-            <i class="icon ion-ios-clock" style="color: #8660fe;"></i>
-          </div>
-          <h4 class="title">
-            <a href>Eiusmod Tempor</a>
-          </h4>
-          <p
-            class="description"
-          >Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+
+        <div v-if="inTexto2">
+
+          <mensagem>
+
+            <template v-slot:header>
+              <h3>Como é nossa Rotina? </h3>
+            </template>
+
+            <p>
+              Nossas aulas acontecem duas vezes por semana, e tem duração de 45 minutos. Iniciamos ela com um aquecimento, depois de termos os corpos aquecidos vamos a técnica do balé clássico. 
+            </p>
+            <p>
+              Na sequência fazemos algum exercício que tenha foco em desenvolver alguma habilidade específica, e por fim, encerramos a aula com alguma brincadeira, que tem sempre algum objetivo inserido por meio da ludicidade.
+            </p>
+            <p>
+              Em todas as etapas da aula, as brincadeiras, o lúdico e a fantasia estão inseridas. A criança sempre é colaboradora nesse processo, tendo espaço para ser ouvida e vivenciar todas as etapas das aulas.
+            </p>
+          </mensagem>
         </div>
-      </b-col>
+
+      </b-modal>
+     
     </b-row>
     <b-row>
       <why-us></why-us>
@@ -94,29 +110,55 @@
 
 <script>
 import WhyUs from "./porquenos.vue";
-import JQuery from "jquery";
-let $ = JQuery;
+import mensagem from "./mensagem.vue";
 
 export default {
   name: "servico",
   components: {
-    WhyUs
+    WhyUs,
+    mensagem
   },
   data() {
-    return {};
+    return {
+      modalCad: false,
+      msgcontext: '',
+      inTexto1: false,
+      inTexto2: false,
+      inTexto3: false,
+      texto1: '',
+      texto2: '',
+      texto3: '',
+    };
   },
-  methods: {}
+  created() {
+  },
+  methods: {
+    mostrartexto (item) {
+      this.inTexto1 = false
+      this.inTexto2 = false
+      this.inTexto3 = false
+      if (item == 1) {
+        this.inTexto1 = true
+      } else if (item == 2) {
+        this.inTexto2 = true
+      }else if (item == 3) {
+        this.inTexto3 = true
+      }
+      this.modalCad = !this.modalCad
+    }
+  }
 };
 </script>
 
 <style scoped>
 #services {
-  padding: 40px 0 40px 0;
-  min-height: 768px;
+  padding: 100px 0 100px 0;
+  min-height: 100vh;
 }
 
 #services .box {
-  padding: 30px;
+  padding: 60px;
+  min-height: 300px;
   position: relative;
   overflow: hidden;
   border: solid 1px silver;
@@ -168,4 +210,11 @@ export default {
   margin-bottom: 0;
   text-align: left;
 }
+
+@media screen and (max-width: 767px) {
+  #services .box {
+    padding: 40px;
+  }
+}
+
 </style>

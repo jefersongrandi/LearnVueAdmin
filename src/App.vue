@@ -1,6 +1,5 @@
 <template>
-  <b-row id="app" align-h="center">
-    <b-col>
+  <div id="app">
       <!--<p>
         <router-link to="/home">Go to Foo</router-link>
       </p>-->
@@ -34,26 +33,26 @@
       </header>
       <main class="principal">
         <!--<div id="nenhum" class="row"></div>-->
-        <section id="home" class="section hero is-primary is-fullheight">
-          <b-container fluid>
-            <home></home>
-          </b-container>
-        </section>
-        <section id="sobre" class="section hero is-primary is-fullheight">
-          <b-container fluid>
-            <sobre></sobre>
-          </b-container>
-        </section>
-        <section id="servicos" class="section hero is-primary is-fullheight">
-          <b-container fluid>
-            <servico></servico>
-          </b-container>
-        </section>
-        <section id="equipe" class="section hero is-primary is-fullheight">
-          <b-container fluid>
-            <meu-time></meu-time>
-          </b-container>
-        </section>
+        <div class="container-fluid">
+          <section id="home" class="section is-primary is-fullheight">
+              <home></home>
+          </section>
+          <section id="sobre" class="section hero is-primary is-fullheight">
+            <b-container fluid>
+              <sobre></sobre>
+            </b-container>
+          </section>
+          <section id="servicos" class="section hero is-primary is-fullheight">
+            <b-container fluid>
+              <servico></servico>
+            </b-container>
+          </section>
+          <section id="equipe" class="section hero is-primary is-fullheight">
+            <b-container fluid>
+              <meu-time></meu-time>
+            </b-container>
+          </section>
+        </div>
       </main>
 
       <footer id="footer" class="section-bg">
@@ -80,10 +79,8 @@
       <div v-scroll="handleScroll" v-if="mostrarScroll"></div>
       <!--<router-view></router-view>-->
       <!--<img width="25%" src="./assets/logo.png">
-      <HelloWorld msg="Hello Vue in CodeSandbox!" />-->
-    </b-col>
     <!--<a target="_blank"><img class="whatsapp" src="img/whatsapp.png" /></a>-->
-  </b-row>
+  </div>
 </template>
 
 <script>
@@ -141,7 +138,7 @@ export default {
       //$( ".principal" ).scrollTop( scrollHeight );
       $("html,body").animate(
         {
-          scrollTop: $("#" + linka).offset().top - 100
+          scrollTop: $("#" + linka).offset().top - 60
         },
         2000,
         function() {
@@ -177,10 +174,10 @@ export default {
 
       //$.each(nav_sections, function() {
       nav_sections.each(function(index, item) {
-        console.log($(this).attr("id"));
+        //onsole.log($(this).attr("id"));
         var atrr = $(this).attr("id");
-        var top = $(this).offset().top - (main_nav_height + 180);
-        var bottom = top + $(this).outerHeight() + 40;
+        var top = $(this).offset().top - 500 //- (main_nav_height + 150);
+        var bottom = top + $(this).outerHeight()// + 40;
 
         //console.log("Top: " + top);
         //console.log("Bottom: " + bottom);
@@ -247,14 +244,32 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #444;
-  margin-top: 60px;
+  /*margin-top: 60px; */
   background-color: #ffffff !important;
   max-width: 100vw !important;
+  margin: 0px;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+main {
+  display: block;
+}
+
+.container-fluid {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 a {
   color: #0a98c0 !important;
   transition: 0.5s;
+}
+.colmain {
+  margin: 0px;
+  padding: 0px;
 }
 
 .main-pages {
@@ -305,18 +320,19 @@ a:focus {
 .section {
   background-color: #fff;
 } */
-main {
+/*main {
   margin-top: 0px;
   max-width: 100vw !important;
-  /*min-width: 100vw; */
+  /*min-width: 100vw; 
   min-height: 100vh;
   margin: 0px;
-}
+} */
 
 
 
 .hero {
-  min-height: 768px;
+  min-height: 100vh;
+  padding: 0px 50px 0px 50px;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
@@ -357,6 +373,13 @@ main {
     min-height: 100vh;
     margin: 0px;
   }
+
+  @media screen and (max-width: 767px) {
+    .hero {
+      padding: 0px 15px 0px 15px;
+    }
+  }
+
 }
 
 </style>

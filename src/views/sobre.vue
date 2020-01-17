@@ -3,27 +3,28 @@
     <b-row align-h="center">
       <b-col col lg="5" md="5" cols="10">
         <div class="about-img">
-          <img src="../img/about-img.jpg" class="img-fluid" alt>
+          <img src="../img/who_us.jpeg" class="img-fluid" alt>
           <!--<b-img src="../img/about-img.jpg" fluid alt="Responsive image"></b-img> class="img-fluid" -->
         </div>
       </b-col>
       <b-col col lg="5" md="5" cols="10">
         <div class="about-content">
           <h2>Sobre nós</h2>
-          <h3>Maria Bailarina é arte e desenvolvimento</h3>
-          <p>O Maria Bailarina existe desde 2013 ofertando aulas de balé em parceria com algumas escolas da cidade, com o intuito de que esta arte seja cada vez mais disseminada e que a partir dela, a criança possa se desenvolver e aprender novas formas de existir e perceber o mundo.</p>
-          <p>Prezando sempre pela aprendizagem prazerosa e divertida desta dança.</p>
           <ul>
             <li>
-              <i class="ion-android-checkmark-circle"></i> 
+              <i class="icon ion-md-bookmark"></i> 
+              O Maria Bailarina existe desde 2013 em Campo Mourão ofertando aulas de balé clássico em parceria com algumas escolas da cidade, com o intuito de que esta arte seja cada vez mais disseminada e que a partir dela, a criança possa se desenvolver e aprender novas formas de existir e perceber o mundo. Prezando sempre pela aprendizagem prazerosa e divertida desta dança.
+            </li>
+            <li>
+              <i class="icon ion-md-bookmark"></i> 
               Nós acreditamos que a dança possui milhares de objetivos e importância, principalmente para o desenvolvimento infantil, tanto na cognição e psicomotricidade, quanto na área psicossocial e psicológica.
             </li>
             <li>
-              <i class="ion-android-checkmark-circle"></i> 
-              Por isso, ao ser uma Mariazinha a criança a criança está inserida em um meio que amplia os seus olhares para a dança, e ela se torna mediadora de muitos processos, possibilitando à bailarina/bailarino um maior conhecimento de seu corpo, do espaço que habita, superando as suas limitações e reconhecendo suas habilidades e potencialidades.
+              <i class="icon ion-md-bookmark"></i> 
+                Por isso, ao ser uma Mariazinha a criança está inserida em um meio que amplia os seus olhares para a dança, e ela se torna mediadora de muitos processos, possibilitando à bailarina/bailarino um maior conhecimento de seu corpo, do espaço que habita, superando as suas limitações e reconhecendo suas habilidades e potencialidades.        
             </li>
-            <li>
-              <i class="ion-android-checkmark-circle"></i> 
+            <li> <!-- ion-android-checkmark-circle -->
+              <i class="icon ion-md-bookmark"></i> 
               Nosso objetivo também é, através da dança, permitir uma maior estruturação emocional e que a criança tenha uma experiência dançante leve, respeitada e feliz.
             </li>
           </ul>
@@ -33,24 +34,21 @@
   </div>
 </template>
 
+
 <script>
-import JQuery from "jquery";
-let $ = JQuery;
 
 export default {
   name: "sobre",
   data() {
     return {};
-  },
-  methods: {}
+  }
 };
 </script>
 
 <style scoped>
 
 #about {
-  padding: 40px 0 40px 0;
-  min-height: 768px;
+  padding: 100px 0 100px 0;
 }
 
 
@@ -71,17 +69,23 @@ export default {
   font-style: italic;
 }
 
+#about .about-content p {
+  font-size: 20px;
+  padding: 35px 0px 35px 0px;
+}
+
 #about .about-content ul {
   list-style: none;
   padding: 0;
 }
 
 #about .about-content ul li {
-  padding-bottom: 10px;
+  padding: 15px 0px 15px 0px;
+  font-size: 20px;
 }
 
 #about .about-content ul li i {
-  font-size: 20px;
+  font-size:30px;
   padding-right: 4px;
   color: #1bb1dc;
 }
@@ -89,16 +93,19 @@ export default {
 #about .about-img {
   position: relative;
   margin: 30px 30px 30px 30px;
+  opacity: 1;
 }
 
 #about .about-img img {
   width: 100%;
   border: 8px solid #fff;
-  transition: 0.5s;
+  transition: 0.8s;
 }
 
 #about .about-img img:hover {
   width: 100%;
+  opacity: 1 !important;
+  filter: alpha(opacity=100);
   -webkit-transform: scale(1.03);
   transform: scale(1.03);
 }
@@ -126,4 +133,26 @@ export default {
   background-color: #ebf1fa;
   transition: 0.5s;
 }
+
+
+@media screen and (max-width: 767px) {  
+  #about .about-img {
+    margin: 0px;
+  }
+
+
+  #about .about-content ul li {
+    padding: 5px 0px 5px 0px;
+    font-size: 16px;
+  }
+
+
+  #about .about-content p {
+    font-size: 16px;
+    padding: 5px 0px 5px 0px;
+  }
+
+}
+
+
 </style>

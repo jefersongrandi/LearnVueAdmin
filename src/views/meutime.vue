@@ -2,7 +2,6 @@
   <div id="timemaria">
     <div class="section-header">
       <h3>Nosso time</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
     </div>
 
     <b-row align-h="center" align-v="center"> <!--class="justify-content-lg-center"-->
@@ -11,25 +10,11 @@
           <!--<b-img thumbnail fluid :src="'../src/img/team-1.jpg'" alt="image1"></b-img>
           <b-img thumbnail fluid :src="require('../img/team-1.jpg')" alt="image1"></b-img>-->
           <!--<b-img :src="'../img/team-1.jpg'"></b-img>-->
-          <img src="../img/team-1.jpg" class="img-fluid" alt="image1">
+          <img src="../img/partner_Luana.jpeg" class="img-fluid" alt="image1">
           <div class="member-info">
             <div class="member-info-content">
-              <h4>Walter White</h4>
-              <span>Chief Executive Officer</span>
-              <div class="social">
-                <a href>
-                  <i class="fa fa-twitter"></i>
-                </a>
-                <a href>
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a href>
-                  <i class="fa fa-google-plus"></i>
-                </a>
-                <a href>
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </div>
+              <h4>Luana Passos Bertoldi</h4>
+              <span>Sócia-Professora</span>
             </div>
           </div>
         </div>
@@ -39,47 +24,19 @@
           <img src="../img/team-2.jpg" class="img-fluid" alt>
           <div class="member-info">
             <div class="member-info-content">
-              <h4>Karina Senger</h4>
+              <h4>Karinna Senger</h4>
               <span>Sócia-Professora</span>
-              <div class="social">
-                <a href>
-                  <i class="fa fa-twitter"></i>
-                </a>
-                <a href>
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a href>
-                  <i class="fa fa-google-plus"></i>
-                </a>
-                <a href>
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </div>
             </div>
           </div>
         </div>
       </b-col>
       <b-col col lg="3" md="4" sm="8" cols="10">
         <div class="member">
-          <img src="../img/team-4.jpg" class="img-fluid" alt>
+          <img src="../img/partner_Isabela.jpeg" class="img-fluid" alt>
           <div class="member-info">
             <div class="member-info-content">
-              <h4>Luana Passos Bertoldi</h4>
-              <span>Sócia-Professora</span>
-              <div class="social">
-                <a href>
-                  <i class="fa fa-twitter"></i>
-                </a>
-                <a href>
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a href>
-                  <i class="fa fa-google-plus"></i>
-                </a>
-                <a href>
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </div>
+              <h4>Isabelle Dorociaki de Oliveira</h4>
+              <span>Professora</span>
             </div>
           </div>
         </div>
@@ -103,8 +60,12 @@ export default {
 
 <style scoped>
 #timemaria {
-  padding: 40px 0 40px 0;
-  min-height: 940px;
+  padding: 100px 0 100px 0;
+  min-height: 100vh;
+}
+
+#timemaria .section-header {
+  padding-bottom: 60px;
 }
 
 #timemaria .member {
@@ -112,6 +73,13 @@ export default {
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
+}
+
+#timemaria .member .img-fluid {
+  max-width: 300px;
+  min-width: 400px;
+  max-height: 450px;
+  min-height: 450px;
 }
 
 #timemaria .member .member-info {
@@ -134,6 +102,7 @@ export default {
   transition: 0.2s;
   padding: 15px 0;
   background: rgba(29, 28, 41, 0.6);
+  margin: 0px 14px 0px 14px;
 }
 
 #timemaria .member .member-info-content {
@@ -181,4 +150,21 @@ export default {
   font-size: 18px;
   margin: 0 2px;
 }
+
+
+@media screen and (max-width: 767px) {
+  #timemaria .member .img-fluid {
+    width: auto !important;
+    min-width: 0px !important;
+    min-height: 0px !important; 
+    max-height: 450px !important;
+  }
+
+  #timemaria .member .member-info {
+    margin: 0px;
+  }
+
+}
+
+
 </style>

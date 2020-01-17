@@ -103,7 +103,7 @@ export default {
 
 <style scoped>
 #footer {
-  padding: 0 0 30px 0;
+  padding: 100px 0 100px 0;
   font-size: 14px;
   background: #fff;
 }
