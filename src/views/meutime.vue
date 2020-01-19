@@ -21,7 +21,7 @@
       </b-col>
       <b-col col lg="3" md="4" sm="8" cols="10">
         <div class="member">
-          <img src="../img/team-2.jpg" class="img-fluid" alt>
+          <img src="../img/partner_Karinna.jpeg" class="img-fluid" alt>
           <div class="member-info">
             <div class="member-info-content">
               <h4>Karinna Senger</h4>

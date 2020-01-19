@@ -32,7 +32,7 @@
         </div>
       </b-col>
       <b-col col lg="4" md="6" sm="12" cols="12">
-        <div class="box">
+        <div class="box" @click.prevent="mostrartexto(3)">
           <div class="icon" style="background: #e6fdfc;">
             <i class="icon ion-ios-paper" style="color: #3fcdc7;"></i>
           </div>
@@ -98,6 +98,32 @@
             </p>
           </mensagem>
         </div>
+
+        <div v-if="inTexto3">
+
+          <mensagem>
+
+            <template v-slot:header>
+              <h3>"Prof. posso assistir a aula?"</h3>
+            </template>
+
+            <p>
+              O início das crianças no Balé é sempre um momento de muito entusiasmo, para pequenas, mas também para os pais, e é comum ouvir alguma mamãe perguntando: "Prof°, posso assistir a aula?"  
+            </p>
+            <p>
+              Nós sabemos o quanto é difícil ficar do lado de fora da sala enquanto sua pequena bailarina faz as primeiras aulas de Balé, mas esse contato com a professora, sem a presença dos pais, é de extrema importância para criar uma conexão entre ambas, e assim gerar confiança e afinidade! 
+            </p>
+            <p>
+              Sabe o que é mais legal? Para encerrar o primeiro semestre convidamos os familiares de nossas bailarinas para assistirem a uma aula! É a nossa "Aula Expositiva"!  
+            </p>
+            <p>
+              E no encerramento do segundo semestre realizamos o nosso Espetáculo Anual, oportunidade de levar parentes e amigos para assistirem sua bailarina brilhar e encantar!
+            </p>
+            <p>
+              Então não precisa se preocupar, você pode assistir a aula sim, no momento certo, ok?!
+            </p>
+          </mensagem>
+        </div>  
 
       </b-modal>
      
